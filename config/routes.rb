@@ -1,4 +1,8 @@
 MetricLogs::Application.routes.draw do
+  get "metrics/map_display"
+
+  post 'metrics/by_name' => 'metrics#metrics_by_name', as: :metrics_by_name
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +52,7 @@ MetricLogs::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'metrics#map_display'
 
   # See how all your routes lay out with "rake routes"
 
